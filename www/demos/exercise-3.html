@@ -1,0 +1,23 @@
+<script>
+
+  'use strict';
+
+  const parts = [ 'this', 'is', 'fun' ];
+
+  const s = parts.reduce( (acc, cur) => { return acc + cur; }, '');
+
+  console.log(s);
+
+  const myMap = (items, transformFn) => {
+
+    return items.reduce( (acc, item) => {
+      acc.push(transformFn(item));
+      return acc;
+    }, []);
+
+  };
+
+  console.log( myMap([1,2,3,4,5], x => x * 2) );
+
+
+</script>

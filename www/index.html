@@ -2,42 +2,25 @@
 
   'use strict';
 
-  // object-oriented vs. functional
-  // mutable vs. immutable
-  // imperative vs. declarative
+  const p = {
+    fn: 'Bob',
+    ln: 'Smith',
+  };
 
-  const nums = [1,2,3,4,5];
+  const p2 = Object.assign({}, p);
 
-  // imperative approach - jQuery
-  for (let x=0; x<nums.length; x++) {
-    console.log(nums[x]);
-  }
+  console.log(p);
+  console.log(p2);
+  console.log(p === p2);
 
-  // declarative approach - React
-  // iterate over an array to perform a side effect
-  // forEach
-  nums.forEach(num => {
-    console.log(num);
-  });
+  const p3 = {
+    ...p,
+    age: 23,
+    fn: 'Sally',
+  };
 
-  // iterate over an array to transform each item
-  // map
-  const doubleNums = nums.map(num => num * 2 /* transform fn */);
-  console.log(doubleNums);
-
-  // iterate over an array to remove items based upon a predicate fn
-  // filter
-  const numsGreaterThan4 = doubleNums.filter(num => num > 4 /* predicate fn */);
-  console.log(numsGreaterThan4);
-
-  // iterate over an array and perform an aggregation or other custom functionality
-  // reduce
-  const sum = nums.reduce( (acc, num) => {
-    console.log('acc: ', acc, 'num: ', num);
-    return acc + num;
-  }, 0 );
-  console.log(sum);
-
-
+  console.log(p);
+  console.log(p3);
+  console.log(p === p3);
 
 </script>

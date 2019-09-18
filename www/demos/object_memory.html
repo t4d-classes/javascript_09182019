@@ -1,0 +1,47 @@
+<script>
+
+  'use strict';
+
+  const p = {
+    firstName: 'Bob',
+    lastName: 'Smith',
+    age: 32,
+    address: {
+      street: '123 Oak Lane',
+      city: 'Mountain View',
+    },
+
+    // functions defined with the function keyword
+    // use call-site 'this'
+    getFullName: function() {
+      return this.firstName + ' ' + this.lastName;
+    },
+  };
+
+  const p2 = {
+    firstName: 'Sally',
+    lastName: 'Smith',
+    address: p.address,
+    getFullName: p.getFullName,
+  };
+
+  console.log(p.getFullName());
+  console.log(p2.getFullName());
+
+  console.log(p.getFullName === p2.getFullName);
+
+  // p2.address.city = 'San Diego';
+  // console.log(p.address.city);
+
+  // p.hairColor = 'brown';
+
+  // delete p.age;
+
+  // console.log(p);
+
+  // Object.keys(p).forEach(key => {
+  //   console.log(key + ' = ' + p[key]);
+  // });
+
+
+</script>
