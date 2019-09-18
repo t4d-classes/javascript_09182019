@@ -1,0 +1,17 @@
+<script>
+
+  'use strict';
+
+  function doIt(msg) {
+    console.log(msg);
+  }
+
+  // const someMessage = (firstName) => {
+  //   return 'Hello World! ' + firstName;
+  // };
+
+  doIt(((firstName) => {
+    return 'Hello World! ' + firstName;
+  })('Tim'));
+
+</script>

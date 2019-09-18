@@ -1,0 +1,42 @@
+<script>
+
+  'use strict';
+
+
+  // the declaration will hoist, and this will run
+  doIt();
+
+  // function declaration
+  function doIt() {
+    console.log('did it!');
+  }
+
+  // the expression does not hoise, this will not run
+  // doIt2();
+
+  // function expression
+  const doIt2 = function() {
+    console.log('did it 2!');
+  };
+
+  // arrow function
+  const doIt3 = () => {
+    console.log('did it 3!');
+  };
+
+  // function invocation
+  doIt();
+  doIt2();
+  doIt3();
+
+  // assign a function object reference
+  const fn = doIt;
+  const fn2 = doIt2;
+  const fn3 = doIt3;
+
+  // invoking the same function
+  fn();
+  fn2();
+  fn3();
+
+</script>
