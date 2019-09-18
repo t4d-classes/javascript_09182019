@@ -26,8 +26,18 @@
   console.log(doubleNums);
 
   // iterate over an array to remove items based upon a predicate fn
+  // filter
   const numsGreaterThan4 = doubleNums.filter(num => num > 4 /* predicate fn */);
   console.log(numsGreaterThan4);
+
+  // iterate over an array and perform an aggregation or other custom functionality
+  // reduce
+  const sum = nums.reduce( (acc, num) => {
+    console.log('acc: ', acc, 'num: ', num);
+    return acc + num;
+  }, 0 );
+  console.log(sum);
+
 
 
 </script>
