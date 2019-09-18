@@ -1,0 +1,39 @@
+<script>
+
+  'use strict';
+
+  // object-oriented vs. functional
+  // mutable vs. immutable
+  // imperative vs. declarative
+
+  const nums = [1, 2, 3, 4, 5];
+
+  console.log(nums.length);
+
+  let newLength = nums.push(9);
+  console.log(newLength);
+  console.log(nums);
+
+  let numRemoved = nums.pop();
+  console.log(numRemoved);
+  console.log(nums);
+
+  newLength = nums.unshift(9);
+  console.log(newLength);
+  console.log(nums);
+
+  numRemoved = nums.shift();
+  console.log(numRemoved);
+  console.log(nums);
+
+  let numsRemoved = nums.splice(2, 1, 9,9,9);
+  console.log(numsRemoved);
+  console.log(nums);
+
+  nums.sort();
+  console.log(nums);
+
+  nums.reverse();
+  console.log(nums);
+
+</script>

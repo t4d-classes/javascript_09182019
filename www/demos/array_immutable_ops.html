@@ -1,0 +1,69 @@
+<script>
+
+  'use strict';
+
+  // object-oriented vs. functional
+  // mutable vs. immutable
+  // imperative vs. declarative
+
+  const nums = [1, 2, 3, 4, 5];
+
+  const newNums1 = nums.concat(9);
+  console.log('add to the end of the array');
+  console.log(nums);
+  console.log(newNums1);
+
+  const newNums2 = newNums1.slice(0, newNums1.length - 1);
+  console.log('remove from the end of the array');
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+
+  const newNums3 = [9].concat(newNums2);
+  console.log('add to the beginning of the array');
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+  console.log(newNums3);
+
+  const newNums4 = newNums3.slice(1);
+  console.log('add to the end of the array');
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+  console.log(newNums3);
+  console.log(newNums4);
+
+  const newNums5 = newNums4.slice(0, 2).concat([9,9,9]).concat(newNums4.slice(3));
+  console.log('replace number 3 with three 9\'s');
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+  console.log(newNums3);
+  console.log(newNums4);
+  console.log(newNums5);
+
+  const newNums6 = newNums5.concat();
+  console.log('sort');
+  newNums6.sort();
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+  console.log(newNums3);
+  console.log(newNums4);
+  console.log(newNums5);
+  console.log(newNums6);
+
+  const newNums7 = newNums6.slice();
+  console.log('reverse');
+  newNums7.reverse();
+  console.log(nums);
+  console.log(newNums1);
+  console.log(newNums2);
+  console.log(newNums3);
+  console.log(newNums4);
+  console.log(newNums5);
+  console.log(newNums6);
+  console.log(newNums7);
+
+</script>

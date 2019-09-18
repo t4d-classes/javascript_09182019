@@ -2,29 +2,32 @@
 
   'use strict';
 
-  // function doIt(a, b, ...c) {
-  //   console.log(a, b, c);
-  // }
+  // object-oriented vs. functional
+  // mutable vs. immutable
+  // imperative vs. declarative
 
-  // doIt(...[1,2,3,4,5]);
+  const nums = [1,2,3,4,5];
 
-  // function writeFullName(person) {
-  //   console.log(person.firstName + ' ' + person.lastName);
-  // }
-
-  // destructuring the parameter
-  function writeFullName({ firstName, lastName }) {
-    console.log(firstName + ' ' + lastName);
+  // imperative approach - jQuery
+  for (let x=0; x<nums.length; x++) {
+    console.log(nums[x]);
   }
 
-  writeFullName.newProp = 'this is fun!';
+  // declarative approach - React
+  // iterate over an array to perform a side effect
+  // forEach
+  nums.forEach(num => {
+    console.log(num);
+  });
 
-  const p = {
-    firstName: 'Bob',
-    lastName: 'Smith',
-  };
+  // iterate over an array to transform each item
+  // map
+  const doubleNums = nums.map(num => num * 2 /* transform fn */);
+  console.log(doubleNums);
 
-  writeFullName(p);
+  // iterate over an array to remove items based upon a predicate fn
+  const numsGreaterThan4 = doubleNums.filter(num => num > 4 /* predicate fn */);
+  console.log(numsGreaterThan4);
 
 
 </script>
