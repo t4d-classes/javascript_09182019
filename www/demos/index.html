@@ -1,0 +1,26 @@
+<script>
+
+  'use strict';
+
+  const p = {
+    fn: 'Bob',
+    ln: 'Smith',
+  };
+
+  const p2 = Object.assign({}, p);
+
+  console.log(p);
+  console.log(p2);
+  console.log(p === p2);
+
+  const p3 = {
+    ...p,
+    age: 23,
+    fn: 'Sally',
+  };
+
+  console.log(p);
+  console.log(p3);
+  console.log(p === p3);
+
+</script>
