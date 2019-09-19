@@ -1,0 +1,56 @@
+<script>
+
+  'use strict';
+
+  // class Promise {
+
+  //   constructor(asyncOp) {
+
+  //     this.resolveFns = [];
+  //     this.rejectFns = [];
+
+  //     const resolve = (result) => {
+  //       this.resolveFns.forEach(fn => fn(result));
+  //     };
+
+  //     const reject = (result) => {
+  //       this.rejectFns.forEach(fn => fn(result));
+  //     };
+
+  //     asyncOp(resolve, reject);
+  //   }
+
+  //   then(fn) {
+  //     this.resolveFns.push(fn);
+  //   }
+
+  //   catch(fn) {
+  //     this.rejectFns.push(fn);
+  //   }
+  // }
+
+  const youngMan = new Promise(function youngLady(resolve, reject) {
+    setTimeout(() => {
+      console.log('she says yes to the dress but with someone else...');
+      reject('she fell in love with his best friend...');
+    }, 2000);
+  });
+
+
+  youngMan
+    .then((result) => {
+      console.log('yay she said yes!');
+      console.log(result);
+    })
+    .catch((result) => {
+      console.log('time to sign up with eHarmony to find a more compatible match...');
+      console.log(result);
+    })
+    .finally(() => {
+      console.log('run some code when its all over...');
+    });
+
+  console.log('young man is waiting...');
+
+
+</script>

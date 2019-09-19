@@ -1,0 +1,6 @@
+{
+  "cars": [
+    { "id": 1, "make": "Ford", "model": "Fusion Hybrid" },
+    { "id": 2, "make": "Tesla", "model": "S" }
+  ]
+}
