@@ -2,34 +2,42 @@
 
   'use strict';
 
-  const cloneObject = (obj) => {
+  // setTimeout(() => {
+  //   console.log('a');
 
-    return Object.keys(obj).reduce( (clone, key) => {
+  //   setTimeout(() => {
+  //     console.log('b');
 
-      clone[key] = obj[key];
-      return clone;
+  //     setTimeout(() => {
+  //       console.log('c');
+  //     }, 500);
 
-    }, {});
-  };
+  //   }, 1000);
 
-  const cloneObject2 = (obj) => {
-    return Object.assign({}, obj);
-  };
+  // }, 2000);
 
-  const cloneObject3 = (obj) => {
-    return { ...obj };
-  };
+  function allDone() {
+    console.log('all done');
+  }
 
-  const p = { fn: 'Bob' };
+  setTimeout(() => {
+    console.log('a');
+  }, 2000);
 
-  const p2 = cloneObject(p);
-  const p3 = cloneObject2(p);
-  const p4 = cloneObject3(p);
+  setTimeout(() => {
+    console.log('b');
+  }, 500);
 
-  console.log(p);
-  console.log(p2);
-  console.log(p3);
-  console.log(p4);
-  console.log(p === p2 === p3 === p4);
+  setTimeout(() => {
+    console.log('c');
+  }, 1000);
+
+  // Lab Exercise:
+
+  // Run the allDone function when all three setTimeouts have completed
+  // Rules:
+  // 1. You cannot change the delay values
+  // 2. You cannot wrap the allDone in a setTimeout with an even higher delay value
+  // 3. You much call the three setTimeouts all in the same task (no sequential operations)
 
 </script>

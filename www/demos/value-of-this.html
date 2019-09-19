@@ -1,0 +1,37 @@
+<script>
+
+  'use strict';
+
+  // keyword-style functions use 'call-site' this
+  function outer() {
+
+    console.log(this);
+
+    // const that = this;
+
+    const inner = () => {
+      // what is the output of second console.log going to be?
+      console.log(this);
+    }
+
+    // unqualified
+    inner();
+  }
+
+  // call-site was just a function invocation with no qualifier
+  // outer(); // value of this is undefined
+
+  // call-site was qualified with the window object
+  // window.outer(); // value of this is Window Obj
+
+  const o = {
+    id: 2,
+    outer: outer,
+  };
+
+  // call-site was qualified with the 'o' object
+  o.outer(); // value of this is 0
+
+  // console.log((outer === window.outer) && (window.outer === o.outer));
+
+</script>

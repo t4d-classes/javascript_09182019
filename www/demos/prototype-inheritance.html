@@ -1,0 +1,44 @@
+<script>
+
+  'use strict';
+
+  const parent = {
+    name: 'Parent',
+    amt: 2000,
+    address: {
+      city: 'Mountain View',
+      state: 'CA',
+    },
+  };
+
+  const child = Object.create(parent);
+  child.name = 'Child';
+
+  console.log(child);
+
+  console.log(child.amt);
+
+  parent.amt = 20000;
+  console.log(child.amt);
+
+  child.amt = 15;
+  console.log(child.amt);
+  console.log(parent.amt);
+  console.log(child);
+
+  delete child.amt;
+  console.log(child.amt);
+  console.log(child);
+
+  console.log(child.address.city);
+
+  // child.address.city = 'Bishop';
+
+  child.address = {
+    city: 'Bishop',
+  };
+
+  console.log(parent.address.city);
+  console.log(child);
+
+</script>

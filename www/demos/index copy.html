@@ -1,0 +1,35 @@
+<script>
+
+  'use strict';
+
+  const cloneObject = (obj) => {
+
+    return Object.keys(obj).reduce( (clone, key) => {
+
+      clone[key] = obj[key];
+      return clone;
+
+    }, {});
+  };
+
+  const cloneObject2 = (obj) => {
+    return Object.assign({}, obj);
+  };
+
+  const cloneObject3 = (obj) => {
+    return { ...obj };
+  };
+
+  const p = { fn: 'Bob' };
+
+  const p2 = cloneObject(p);
+  const p3 = cloneObject2(p);
+  const p4 = cloneObject3(p);
+
+  console.log(p);
+  console.log(p2);
+  console.log(p3);
+  console.log(p4);
+  console.log(p === p2 === p3 === p4);
+
+</script>

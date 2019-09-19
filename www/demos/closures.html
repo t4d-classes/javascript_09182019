@@ -1,0 +1,28 @@
+<script>
+
+  'use strict';
+
+  function outer() {
+
+    let t = 2;
+
+    setTimeout(() => {
+      t = 4;
+    }, 2000);
+
+    return function inner() {
+      console.log(t);
+    }
+  }
+
+  const innerFn = outer();
+
+  innerFn();
+
+  setTimeout(() => {
+    innerFn();
+  }, 4000);
+
+  console.dir(innerFn);
+
+</script>
