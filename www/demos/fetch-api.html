@@ -1,0 +1,47 @@
+<script>
+
+  'use strict';
+
+  const myFetch = url => {
+
+    return new Promise(resolve => {
+      const xhr = new XMLHttpRequest();
+
+      xhr.addEventListener('readystatechange', () => {
+
+        if (xhr.status >= 200 && xhr.status < 400 && xhr.readyState === 4) {
+          resolve(JSON.parse(xhr.responseText));
+        }
+      });
+
+      xhr.open('GET', url);
+      xhr.send();
+    });
+
+  };
+
+
+  // Lab Exercise:
+  // Implement the function as shown below, exactly please...
+
+  myFetch('http://localhost:3010/cars').then(cars => console.log(cars));
+
+  // Lab Exercise:
+
+  // Using the example code below, and what you just learning about promise chaining
+  // Please write some code using the real fetch API to add two cars and then display all of the cars including the two which were just added
+
+  fetch('http://localhost:3010/cars')
+    .then(res => res.json())
+    .then(cars => console.log(cars));
+
+  fetch('http://localhost:3010/cars', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ make: 'Nissan', model: 'Leaf' }),
+  })
+    .then(res => res.json())
+    .then(car => console.log(car));
+
+
+</script>

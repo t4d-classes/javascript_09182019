@@ -1,6 +1,24 @@
 {
   "cars": [
-    { "id": 1, "make": "Ford", "model": "Fusion Hybrid" },
-    { "id": 2, "make": "Tesla", "model": "S" }
+    {
+      "id": 1,
+      "make": "Ford",
+      "model": "Fusion Hybrid"
+    },
+    {
+      "id": 2,
+      "make": "Tesla",
+      "model": "S"
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 3
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 4
+    }
   ]
 }
