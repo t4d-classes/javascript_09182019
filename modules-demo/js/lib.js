@@ -1,0 +1,1 @@
+export const succ = x => x + 1;
