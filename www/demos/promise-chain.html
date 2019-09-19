@@ -31,8 +31,8 @@
 
   const youngMan = new Promise(function youngLady(resolve, reject) {
     setTimeout(() => {
-      console.log('she says yes to the dress but with someone else...');
-      reject('she fell in love with his best friend...');
+      console.log('she says yes to the dress...');
+      resolve('she is madly in love with him...');
     }, 2000);
   });
 
@@ -41,6 +41,29 @@
     .then((result) => {
       console.log('yay she said yes!');
       console.log(result);
+
+      console.log('find a place to get married...');
+      return new Promise(resolve => {
+
+        setTimeout(() => {
+          resolve('found a place to get married');
+        }, 2000);
+      });
+
+    })
+    .then(results => {
+      console.log(results);
+
+      console.log('find some wedding clothes...');
+      return new Promise(resolve => {
+
+        setTimeout(() => {
+          resolve('found something to wear...');
+        }, 2000);
+      });
+    })
+    .then(results => {
+      console.log(results);
     })
     .catch((result) => {
       console.log('time to sign up with eHarmony to find a more compatible match...');
@@ -51,6 +74,5 @@
     });
 
   console.log('young man is waiting...');
-
 
 </script>

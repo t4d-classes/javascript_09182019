@@ -19,6 +19,26 @@
       "make": "Nissan",
       "model": "Leaf",
       "id": 4
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 5
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 6
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 7
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "id": 8
     }
   ]
 }

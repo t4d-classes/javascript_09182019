@@ -24,24 +24,62 @@
   // Lab Exercise:
   // Implement the function as shown below, exactly please...
 
-  myFetch('http://localhost:3010/cars').then(cars => console.log(cars));
+  // myFetch('http://localhost:3010/cars').then(cars => console.log(cars));
 
   // Lab Exercise:
 
   // Using the example code below, and what you just learning about promise chaining
   // Please write some code using the real fetch API to add two cars and then display all of the cars including the two which were just added
 
-  fetch('http://localhost:3010/cars')
-    .then(res => res.json())
-    .then(cars => console.log(cars));
-
+  // less correct way...
+  // suffers from the problem of the infinite nesting
   fetch('http://localhost:3010/cars', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ make: 'Nissan', model: 'Leaf' }),
   })
+    .then(() => {
+
+      return fetch('http://localhost:3010/cars', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ make: 'Nissan', model: 'Leaf' }),
+      })
+        .then(() => {
+          return fetch('http://localhost:3010/cars')
+            .then(res => res.json())
+            .then(cars => console.log(cars));
+        });
+    });
+
+  // more correct way...
+  // keeps everything flat...
+  fetch('http://localhost:3010/cars', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ make: 'Nissan', model: 'Leaf' }),
+  })
+    .then(() => {
+      return fetch('http://localhost:3010/cars', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ make: 'Nissan', model: 'Leaf' }),
+      });
+    })
+    .then(() => {
+      return fetch('http://localhost:3010/cars');
+    })
     .then(res => res.json())
-    .then(car => console.log(car));
+    .then(cars => console.log(cars));
+
+// Lab Exercise:
+
+// Repeat the same exercise as last time, except make both POST requests at the same time, then when both complete do a GET reqest to download the updates cars. Display the cars in the console.
+
+
+
+
+
 
 
 </script>
